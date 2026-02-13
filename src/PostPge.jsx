@@ -1,7 +1,27 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { use, useContext } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import DataContext from "./context/DataContext";
+import api from "./api/api";
 
-const PostPge = ({ posts, handleDelete }) => {
+const PostPge = () => {
+  const navigate = useNavigate();
+
+  const { posts, setPosts } = useContext(DataContext);
+
+  const handleDelete = async (id) => {
+    try {
+      const postsList = posts.filter((post) => post.id !== id);
+
+      const response = await api.delete(`/posts/${id}`);
+
+      setPosts(postsList);
+    } catch (error) {
+      console.log("error", error.message);
+    }
+
+    navigate("/");
+  };
+
   const { id } = useParams();
 
   const post = posts.find((pst) => String(pst.id) === id);

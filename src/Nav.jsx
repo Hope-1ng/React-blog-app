@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DataContext from "./context/DataContext";
+import { useContext } from "react";
 
-const Nav = ({ search, setSearch }) => {
+const Nav = () => {
+  const { search, setSearch } = useContext(DataContext);
   return (
     <div className="Nav">
       <form
