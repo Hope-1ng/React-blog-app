@@ -1,14 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import api from "../api/api";
-import useWindowSize from "../hooks/useWindowSize";
 import useAxiosFetch from "../hooks/useAxiosFetch";
-import EditPost from "../../EditPost";
 import { useNavigate } from "react-router-dom";
 
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-  
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
