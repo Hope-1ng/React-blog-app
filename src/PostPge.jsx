@@ -1,6 +1,6 @@
 import React, { use, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import api from "./api/api";
+import api from "./server/api";
 import { useStoreActions, useStoreState } from "easy-peasy";
 
 const PostPge = () => {

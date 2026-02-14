@@ -1,5 +1,5 @@
 import { createStore, thunk, action, computed } from "easy-peasy";
-import api from "./src/api/api";
+import api from "./src/server/api";
 
 export default createStore({
   posts: [],
@@ -69,7 +69,6 @@ export default createStore({
   }),
 
   EditPost: thunk(async (actions, updatePost, helpers) => {
-    
     const id = updatePost.id;
 
     const { posts } = helpers.getState();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
-import api from "./src/api/api";
+import api from "./src/server/api";
 import { useStoreActions, useStoreState } from "easy-peasy";
 
 const EditPost = () => {
